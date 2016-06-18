@@ -6,8 +6,8 @@ import datetime
 
 unix = time.time()
 date = str(datetime.datetime.fromtimestamp(unix).strftime('%Y-%m-%d %H:%M:%S'))
-conn = sqlite3.connect("C:\\Users\\tom\Documents\python\New folder\\quant_1.db")
-conn2 = sqlite3.connect("C:\\Users\\tom\Documents\python\New folder\\quant_2.db")
+conn = sqlite3.connect("C:\\quant_1.db")
+conn2 = sqlite3.connect("C:\\quant_2.db")
 
 
 c = conn.cursor()
@@ -86,7 +86,7 @@ while not done:
 class stockscreen():
 
     gameDisplay = pygame.display.set_mode((width,height))
-    image = pygame.image.load("C:\\Users\\tom\Documents\python\New folder\\figure_2.png")
+    image = pygame.image.load("C:\\figure_2.png")
     gameDisplay.blit(image,(10,10))
     pygame.display.flip()
 pygame.mixer.pre_init(44100, -16, 2, 4048)
