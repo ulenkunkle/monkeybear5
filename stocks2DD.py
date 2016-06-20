@@ -15,7 +15,7 @@ global  IDS
 
 unix = time.time()
 date = str(datetime.datetime.fromtimestamp(unix).strftime('%Y-%m-%d %H:%M:%S'))
-conn = sqlite3.connect("C:\\Users\\tom\Documents\python\New folder\\stock_1cczzzzzzzzzaa.db")
+conn = sqlite3.connect("C:\\New folder\\stock_1cczzzzzzzzzaa.db")
 c = conn.cursor()
 
 
