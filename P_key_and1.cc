@@ -20,6 +20,21 @@ int main(int argc, char* argv[])
   }
   if(argc>2) {
     sscanf( argv[2], "%ld", &seed ) ; // put the 2nd argument in seed
+    rs=inst&0xFF; 
+    pc=(addr+1)+rs; 
+    rd=(inst>>8)&0xF; 
+    fprintf(fpout,"    lpc r%u,#%u ;0x%04X [0x%04X]",rd,rs,(unsigned short)pc,(unsigned short)mem[pc]); 
+    for(lab=0;lab<nlabs;lab++) 
+    { 
+    if(lab_struct[lab].addr==pc) break; 
+            } 
+            if(lab<nlabs) 
+            { 
+            fprintf(fpout," %s",lab_struct[lab].name); 
+            } 
+            fprintf(fpout,"\n");
+            continue; 
+
   }
   // Write out a summary of what's going to happen
   cout << "# " << argv[0] << " N=" << N << " seed=" << seed << endl ;
